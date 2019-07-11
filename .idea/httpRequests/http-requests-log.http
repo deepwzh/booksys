@@ -1,0 +1,603 @@
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+<> 2019-07-11T052051.200.json
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+<> 2019-07-11T051706.200.json
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+<> 2019-07-11T051532.200.json
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+<> 2019-07-11T035742.200.json
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "user_id": 1,
+    "borrow_date": 1562831445,
+    "due_date": 1562831445
+
+}
+
+<> 2019-07-11T035429.200.json
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "user_id": 1,
+    "borrow_date": 1562831445,
+    "due_date": 1562831445
+
+}
+
+<> 2019-07-11T035334.500.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "user_id": 1,
+    "borrow_date": 1562831445
+
+}
+
+<> 2019-07-11T035125.500.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "user_id": 1,
+    "borrow_date": 1562831445
+
+}
+
+<> 2019-07-11T035102.500.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "user_id": 1,
+    "borrow_date": "2075-05-06"
+
+}
+
+<> 2019-07-11T035001.400.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "user_id": 1,
+    "borrow_date": "2075-05-06",
+    "due_date": "2200-05-06"
+}
+
+<> 2019-07-11T034836.400.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "user_id": 1,
+    "borrow_date": "2075-05-06",
+    "due_date": "2200-05-06"
+}
+
+<> 2019-07-11T034821.400.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "user_id": 1
+}
+
+<> 2019-07-11T034725.500.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "d": 1
+}
+
+<> 2019-07-11T034648.400.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "d": 1
+}
+
+<> 2019-07-11T034419.500.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "d": "2016-07-08"
+}
+
+<> 2019-07-11T034111.400.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "d": "2016-07-08"
+}
+
+<> 2019-07-11T034026.500.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "userid": "111",
+    "bookid": "book_id",
+    "d": "2016-07-08"
+}
+
+<> 2019-07-11T033724.400.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "userid": "111",
+    "bookid": "book_id",
+    "d": "2016-07-08"
+}
+
+<> 2019-07-11T033601.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+<> 2019-07-11T033458.200.json
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "user_id": "111",
+    "book_id": "book_id",
+    "date": "2016-07-08"
+}
+
+<> 2019-07-11T033412.400.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "user_id": "111",
+    "book_id": "book_id",
+    "date": "2016-07-08"
+}
+
+<> 2019-07-11T033107.400.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "user_id": "111",
+    "book_id": "book_id",
+    "date": "2016-07-08"
+}
+
+<> 2019-07-11T032902.400.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "user_id": "111",
+    "book_id": "book_id",
+    "date": "2016-07-08"
+}
+
+<> 2019-07-11T032838.400.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "user_id": "111",
+    "book_id": "book_id",
+    "date": "2016-07-08"
+}
+
+<> 2019-07-11T032823.404.html
+
+###
+
+POST http://localhost:8080/api/addborrow
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+<> 2019-07-11T032810.200.json
+
+###
+
+POST http://localhost:8080/api/borrow/add
+Content-Type: application/json
+
+{
+  "user_id":"1",
+  "book_id":"1",
+  "date": "2016-09-08"
+}
+
+<> 2019-07-11T032355.400.html
+
+###
+
+POST http://localhost:8080/api/borrow/add
+Content-Type: application/json
+
+{
+  "user_id":"1",
+  "book_id":"1",
+  "date": "2016-09-08"
+}
+
+<> 2019-07-11T032353.400.html
+
+###
+
+POST http://localhost:8080/api/borrow/add
+Content-Type: application/json
+
+{
+  "user_id":"1",
+  "book_id":"1",
+  "date": "2016-09-08"
+}
+
+<> 2019-07-11T032328.400.html
+
+###
+
+POST http://localhost:8080/api/borrow/add
+Content-Type: application/json
+
+{
+  "user_id":"1",
+  "book_id":"1",
+  "date": "2016-09-08"
+}
+
+<> 2019-07-11T032118.400.html
+
+###
+
+POST http://localhost:8080/api/borrow/add
+Content-Type: application/json
+
+{
+  "user_id":"1",
+  "book_id":"1",
+  "date": "2016-09-08"
+}
+
+<> 2019-07-11T032100.400.html
+
+###
+
+POST http://localhost:8080/api/borrow/add
+Content-Type: application/json
+
+{
+  "user_id":1,
+  "book_id":1,
+  "date": "2016-09-08"
+}
+
+<> 2019-07-11T032047.400.html
+
+###
+
+POST http://localhost:8080/api/borrow/add
+Content-Type: application/json
+
+{
+  "user_id":1,
+  "book_id":1,
+  "date": "2016-09-08"
+}
+
+<> 2019-07-11T031810.400.html
+
+###
+
+POST http://localhost:8080/api/borrow/add
+Content-Type: application/json
+
+{
+  "user_id":1,
+  "book_id":1,
+  "date": "2016-09-08"
+}
+
+<> 2019-07-11T031702.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+<> 2019-07-11T031646.200.json
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "1",
+    "password": "1"
+}
+
+<> 2019-07-11T031624.200.json
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "1",
+    "password": "1"
+}
+
+<> 2019-07-11T031407.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "1",
+    "password": "1"
+}
+
+<> 2019-07-11T031319.200.json
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "1",
+    "password": "1"
+}
+
+<> 2019-07-11T030551.200.json
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "1",
+    "password": "1"
+}
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "1",
+    "password": "1"
+}
+
+<> 2019-07-11T024702.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "1",
+    "password": "1"
+}
+
+<> 2019-07-11T024018.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+    "username": "1",
+    "password": "1"
+}
+
+<> 2019-07-11T024008.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+
+{}
+
+<> 2019-07-11T023755.415.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+<> 2019-07-11T023745.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+
+}
+
+<> 2019-07-11T023734.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+ "username": "admin",
+ "password": "admin"
+}
+
+<> 2019-07-11T023342.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+ "username": "admin",
+ "password": "admin"
+}
+
+<> 2019-07-11T023004.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+ "username": "admin",
+ "password": "admin"
+}
+
+<> 2019-07-11T023000.400.html
+
+###
+
+POST http://127.0.0.1:8080/api/login
+Content-Type: application/json
+
+{
+ "username": "admin",
+ "password": "admin"
+}
+
+<> 2019-07-11T022252.400.html
+
+###
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn._92ac.mapper.BookMapper">
+	<!-- 自定义结果集 -->
+    <resultMap type="cn._92ac.pojo.Book"  id="findAllBook">
+    	<!-- id标签用来代表表中的主键 column 中填数据库表的字段名  property中填对应的pojo类的属性 -->
+    	<id column="id" property="id" />
+    	<result column="isbn" property="isbn"/>
+    	 <result column="name" property="name"/>
+    	 <result column="date" property="date"/>
+    	<result column="num" property="num"/>
+    	<result column="exist_num" property="exist_num"/>
+         <result column="price" property="price"/>
+
+		 <association property="type" javaType="cn._92ac.pojo.BookType">
+		    <result property="name" column="book_type_name"/>
+		  </association>
+		<association property="pub" javaType="cn._92ac.pojo.BookPub">
+			<result property="name" column="book_pub_name"/>
+		</association>
+    <!---->
+    </resultMap>
+
+	<resultMap type="cn._92ac.pojo.Borrow"  id="findAllBorrow">
+		<!-- id标签用来代表表中的主键 column 中填数据库表的字段名  property中填对应的pojo类的属性 -->
+		<id column="id" property="id" />
+		<result column="user_id" property="user_id"/>
+		<result column="book_id" property="book_id"/>
+
+		<result column="borrow_date" property="borrow_date"/>
+		<result column="due_date" property="due_date"/>
+
+		<association property="book" javaType="cn._92ac.pojo.Book">
+			<result property="name" column="book_name"/>
+			<result property="isbn" column="book_isbn"/>
+
+		</association>
+		<!--<association property="user" javaType="cn._92ac.pojo.User">-->
+			<!--<result property="name" column="username"/>-->
+		<!--</association>-->
+		<!--<association property="type" javaType="cn._92ac.pojo.BookType">-->
+			<!--<result property="name" column="book_type.name"/>-->
+		<!--</association>-->
+		<!---->
+	</resultMap>
+
+	<!-- 查询所有的目录，返回查询结果集，结果集存在级联的问题
+		一对一，一对多，多对多
+		一对一：
+		一对多：collection
+	 -->
+	<select id="selectAll"   resultMap="findAllBook">
+		select book.*, book_type.name as book_type_name, book_pub.name as book_pub_name from book, book_type, book_pub where book_type.id = book.type and book_type.id = book.pub;
+
+	</select>
+	<select id="selectAllBookName"   resultMap="findAllBook">
+		select id, name from book
+
+	</select>
+	<select id="selectAllBorrow" resultMap="findAllBorrow">
+		select borrow.*, book.name as book_name, book.isbn as book_isbn from borrow, user, book where book.id = borrow.book_id;
+	</select>
+	<insert id="addBorrow" parameterType="cn._92ac.bean.BorrowInfo" >
+		insert INTO borrow (`book_id`, `user_id`, `borrow_date`, `due_date`) values (#{book_id}, #{user_id}, #{borrow_date}, #{due_date})
+	</insert>
+
+</mapper>
+
