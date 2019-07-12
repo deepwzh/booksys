@@ -35,5 +35,9 @@ public class UserService {
         return user;
     }
 
+    public boolean createUser(User user) {
+        return userMapper.addUser(user);
+    }
+
 
 }

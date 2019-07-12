@@ -1,3 +1,55 @@
+POST http://127.0.0.1:8080/api/register
+Content-Type: application/json
+
+{
+    "username": "admin1",
+    "password": "admin1",
+    "email": "wzh2012@outlook.com"
+}
+
+<> 2019-07-11T095148.200.json
+
+###
+
+POST http://127.0.0.1:8080/api/register
+Content-Type: application/json
+
+{
+    "username": "admin1",
+    "password": "admin1",
+    "email": "wzh2012@outlook.com"
+}
+
+<> 2019-07-11T095035.500.html
+
+###
+
+POST http://127.0.0.1:8080/api/register
+Content-Type: application/json
+
+{
+    "username": "admin1",
+    "password": "admin1",
+    "email": "wzh2012@outlook.com"
+}
+
+<> 2019-07-11T094900.500.html
+
+###
+
+POST http://127.0.0.1:8080/api/register
+Content-Type: application/json
+
+{
+    "username": "admin1",
+    "password": "admin1",
+    "email": "wzh2012@outlook.com"
+}
+
+<> 2019-07-11T090758.404.html
+
+###
+
 POST http://127.0.0.1:8080/api/login
 Content-Type: application/json
 
@@ -562,42 +614,6 @@ Content-Type: application/json
 }
 
 <> 2019-07-11T023342.400.html
-
-###
-
-POST http://127.0.0.1:8080/api/login
-Content-Type: application/json
-
-{
- "username": "admin",
- "password": "admin"
-}
-
-<> 2019-07-11T023004.400.html
-
-###
-
-POST http://127.0.0.1:8080/api/login
-Content-Type: application/json
-
-{
- "username": "admin",
- "password": "admin"
-}
-
-<> 2019-07-11T023000.400.html
-
-###
-
-POST http://127.0.0.1:8080/api/login
-Content-Type: application/json
-
-{
- "username": "admin",
- "password": "admin"
-}
-
-<> 2019-07-11T022252.400.html
 
 ###
 

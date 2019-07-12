@@ -6,6 +6,7 @@ public interface UserMapper {
 
 	
 	public  User  selectUserByUsername(String username);
+	public boolean addUser(User user);
 	
 	
 	

@@ -67,4 +67,16 @@ public class UserController {
             return new UserResult(0, "登录失败", null);
         }
     }
+
+    @ResponseBody
+    @RequestMapping(value="/api/register",method= RequestMethod.POST)
+    public Result register(@RequestBody User user) {
+        boolean is_vaild = userService.createUser(user);
+        System.out.println(is_vaild);
+        if (is_vaild) {
+            return new Result(0, "注册成功");
+        } else {
+            return new Result(1, "登录失败");
+        }
+    }
 }

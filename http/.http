@@ -21,3 +21,16 @@ Content-Type: application/json
     "password": "admin"
 }
 ###
+
+
+###
+POST http://127.0.0.1:8080/api/register
+Content-Type: application/json
+
+{
+    "username": "admin1",
+    "password": "admin1",
+    "email": "wzh2012@outlook.com"
+}
+
+###

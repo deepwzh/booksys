@@ -8,5 +8,8 @@
 		
 		</select>
 
+		<insert id="addUser" parameterType="cn._92ac.pojo.User">
+			insert into user (`username`, `password`, `email`) values (#{username}, #{password}, #{email})
+		</insert>
 
 </mapper>
