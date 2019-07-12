@@ -34,3 +34,26 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://127.0.0.1:8080/api/feedback
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "content": "Hello World"
+}
+
+###
+
+POST http://127.0.0.1:8080/api/addbook
+Content-Type: application/json
+
+{
+    "name": "Hello World",
+    "type": 1,
+    "date": 777777777,
+    "isbn": "4545454545",
+    "pub": 2
+}
+
+###

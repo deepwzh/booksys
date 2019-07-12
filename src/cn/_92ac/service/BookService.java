@@ -1,5 +1,6 @@
 package cn._92ac.service;
 
+import cn._92ac.bean.AddBookInfo;
 import cn._92ac.bean.BorrowInfo;
 import cn._92ac.mapper.BookMapper;
 import cn._92ac.pojo.Book;
@@ -36,6 +37,9 @@ public class BookService {
 			return bookMapper.addBorrow(info);
 		}
 
+		public boolean addBook(AddBookInfo book) {
+			return bookMapper.addBook(book);
+		}
 		public List<Book> getAllBookName() {
 			return bookMapper.selectAllBookName();
 		}

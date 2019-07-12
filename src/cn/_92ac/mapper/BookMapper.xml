@@ -9,7 +9,8 @@
     	 <result column="name" property="name"/>
     	 <result column="date" property="date"/>
     	<result column="num" property="num"/>
-    	<result column="exist_num" property="exist_num"/>
+		<result column="author" property="author"/>
+		<result column="exist_num" property="exist_num"/>
          <result column="price" property="price"/>
 
 		 <association property="type" javaType="cn._92ac.pojo.BookType">
@@ -50,12 +51,11 @@
 		一对多：collection
 	 -->
 	<select id="selectAll"   resultMap="findAllBook">
-		select book.*, book_type.name as book_type_name, book_pub.name as book_pub_name from book, book_type, book_pub where book_type.id = book.type and book_type.id = book.pub;
+		select book.*, book_type.name as book_type_name, book_pub.name as book_pub_name from book, book_type, book_pub where book_type.id = book.type and book_pub.id = book.pub;
 
 	</select>
 	<select id="selectAllBookName"   resultMap="findAllBook">
 		select id, name from book
-
 	</select>
 	<select id="selectAllBorrow" resultMap="findAllBorrow">
 		select borrow.*, book.name as book_name, book.isbn as book_isbn from borrow, user, book where book.id = borrow.book_id;
@@ -63,6 +63,8 @@
 	<insert id="addBorrow" parameterType="cn._92ac.bean.BorrowInfo" >
 		insert INTO borrow (`book_id`, `user_id`, `borrow_date`, `due_date`) values (#{book_id}, #{user_id}, #{borrow_date}, #{due_date})
 	</insert>
-
+	<insert id="addBook" parameterType="cn._92ac.bean.AddBookInfo" >
+		insert INTO book (`name`, `isbn`, `type`, `date`, `pub`) values (#{name}, #{isbn}, #{type}, #{date}, #{pub})
+	</insert>
 </mapper>
 

@@ -1,0 +1,10 @@
+{
+  "result": "登录成功",
+  "code": 0,
+  "user": {
+    "id": 1,
+    "username": "admin",
+    "password": "admin",
+    "email": null
+  }
+}

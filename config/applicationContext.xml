@@ -31,7 +31,7 @@
 			鏈接協議：數據庫類型://端口號/數據名字？約束條件 -->
 			<property name="jdbcUrl" value="jdbc:mysql://192.168.119.213:3306/book_sys?characterEncoding=utf-8"></property>
 			<property name="user" value="root"></property>
-			<property name="password" value="xxxx"></property>
+			<property name="password" value="soft1234"></property>
 
 	</bean>
 	<!-- sqlsessionFactory,通过工厂模式管理session对话 -->

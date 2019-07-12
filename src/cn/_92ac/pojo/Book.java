@@ -10,6 +10,16 @@ public class Book {
 		private int num;
 		private BookType type;
 
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	private String author;
+
 	public BookType getType() {
 		return type;
 	}

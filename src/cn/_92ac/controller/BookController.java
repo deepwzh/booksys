@@ -1,5 +1,6 @@
 package cn._92ac.controller;
 
+import cn._92ac.bean.AddBookInfo;
 import cn._92ac.bean.BorrowInfo;
 import cn._92ac.bean.Result;
 import cn._92ac.pojo.Book;
@@ -54,5 +55,17 @@ public class BookController {
 	@RequestMapping(value="/api/booklist", method= RequestMethod.GET)
 	public List<Book> borrowBook() {
 		return bookService.getAllBookName();
+	}
+
+
+	@ResponseBody
+	@RequestMapping(value="/api/addbook", method= RequestMethod.POST)
+	public Result borrowBook(@RequestBody AddBookInfo book) {
+		boolean res = bookService.addBook(book);
+		if (res) {
+			return new Result(0, "添加成功");
+		} else {
+			return new Result(1, "添加失败");
+		}
 	}
 }
