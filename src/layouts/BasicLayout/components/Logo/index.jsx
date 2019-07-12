@@ -6,7 +6,7 @@ export default function Logo(props) {
   const { style } = props;
   return (
     <Link to="/" className={styles.logoStyle} style={style}>
-      政府管理系统
+      图书馆管理系统
     </Link>
   );
 }

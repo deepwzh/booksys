@@ -17,7 +17,7 @@ import styles from './index.module.scss';
 const { Option } = Select;
 const { Group: RadioGroup } = Radio;
 
-export default function RecommendForm() {
+export default function RecommendForm(props) {
   const [value, setValue] = useState({
     // status: 'borrow',
   });
@@ -26,7 +26,7 @@ export default function RecommendForm() {
   useEffect(() => {
     fetchData();
   }, []);
-
+  console.log(props);
   const mockApi = () => {    
      return new Promise((resolve) => {
       //  setTimeout(() => {

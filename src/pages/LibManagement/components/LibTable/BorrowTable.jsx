@@ -38,12 +38,24 @@ export default function BorrowTable() {
      //  }, 600);
     });
  };
+ const getFilterDataSource = (filter_data, data) => {
+  for (let [property, value] of Object.entries(filter_data)) {
+    data = data.filter((item) => 
 
-  const fetchData = async () => {
+      String(item[property]).includes(String(value))
+    );
+  }
+  return data;
+}
+  const fetchData = async (filter_data) => {
     await setIsloading(true);
     mockApi().then((data) => {
-      setDataSource(data);
-      setIsloading(false);
+        if (filter_data) {
+          setDataSource(getFilterDataSource(filter_data, data));
+        } else {
+          setDataSource(data);
+        }
+        setIsloading(false);
     });
   };
 
@@ -51,8 +63,8 @@ export default function BorrowTable() {
     fetchData(current);
   };
 
-  const handleFilter = () => {
-    fetchData();
+  const handleFilter = (filter_data) => {
+    fetchData(filter_data);
   };
 
   const renderOper = () => {
@@ -61,38 +73,38 @@ export default function BorrowTable() {
 
   const config = [
     {
-      label: '图书名称',
+      label: '用户ID',
       component: 'Input',
       componnetProps: {
         placeholder: '请输入',
       },
       formBinderProps: {
-        name: 'bookName',
+        name: 'user_id', 
         triggerType: 'onBlur',
       },
     },
-    {
-      label: 'ISBN 号',
-      component: 'Input',
-      componnetProps: {
-        placeholder: '请输入',
-      },
-      formBinderProps: {
-        name: 'isbn',
-        triggerType: 'onBlur',
-      },
-    },
-    {
-      label: '出版社',
-      component: 'Input',
-      componnetProps: {
-        placeholder: '请输入',
-      },
-      formBinderProps: {
-        name: 'publisher',
-        triggerType: 'onBlur',
-      },
-    },
+    // {
+    //   label: 'ISBN 号',
+    //   component: 'Input',
+    //   componnetProps: {
+    //     placeholder: '请输入',
+    //   },
+    //   formBinderProps: {
+    //     name: 'isbn',
+    //     triggerType: 'onBlur',
+    //   },
+    // },
+    // {
+    //   label: '出版社',
+    //   component: 'Input',
+    //   componnetProps: {
+    //     placeholder: '请输入',
+    //   },
+    //   formBinderProps: {
+    //     name: 'publisher',
+    //     triggerType: 'onBlur',
+    //   },
+    // },
   ];
   const columns = [
     {
@@ -127,12 +139,13 @@ export default function BorrowTable() {
       title: '归还日期',
       dataIndex: 'due_date',
     },
-    {
-      title: '操作',
-      dataIndex: 'oper',
-      cell: renderOper,
-    },
+    // {
+    //   title: '操作',
+    //   dataIndex: 'oper',
+    //   cell: renderOper,
+    // },
   ];
+  console.log(this);
   return (
     <div>
       <TableFilter config={config} onChange={handleFilter} />

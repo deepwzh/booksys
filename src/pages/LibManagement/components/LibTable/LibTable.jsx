@@ -21,10 +21,10 @@ const getData = () => {
   });
 };
 
-export default function LibTable() {
+export default function LibTable(props) {
   const [isLoading, setIsloading] = useState(false);
   const [dataSource, setDataSource] = useState([]);
-
+  const [filter_data, setFilterData] = useState();
   useEffect(() => {
     fetchData();
   }, []);
@@ -39,11 +39,23 @@ export default function LibTable() {
       //  }, 600);
      });
   };
+  const getFilterDataSource = (filter_data, data) => {
+    for (let [property, value] of Object.entries(filter_data)) {
+      data = data.filter((item) => 
 
-  const fetchData = async () => {
+        item[property].includes(value)
+      );
+    }
+    return data;
+  }
+  const fetchData = async (filter_data) => {
     await setIsloading(true);
     mockApi().then((data) => {
-      setDataSource(data);
+      if (filter_data) {
+        setDataSource(getFilterDataSource(filter_data, data));
+      } else {
+        setDataSource(data);
+      }
       setIsloading(false);
     });
   };
@@ -53,15 +65,23 @@ export default function LibTable() {
   };
 
   const handleBorrowClick = () => {
-    Message.success('借阅成功');
+    props.history.push({
+      pathname: '/borrow',
+      param: {
+        "id": 1,
+      },
+    })
+    // Message.success('借阅成功');
   };
 
   const handleDetailClick = () => {
     Message.success('暂无详细信息');
   };
 
-  const handleFilter = () => {
-    fetchData();
+  const handleFilter = (filter_data) => {
+    // setFilterData(data);
+    console.log(filter_data)
+    fetchData(filter_data);
   };
 
   const renderOper = () => {
@@ -97,7 +117,7 @@ export default function LibTable() {
     },
     {
       title: '作者名称',
-      dataIndex: 'authName',
+      dataIndex: 'author',
     },
     {
       title: '出版社',
@@ -119,12 +139,12 @@ export default function LibTable() {
       title: '价格',
       dataIndex: 'price',
     },
-    {
-      title: '操作',
-      dataIndex: 'oper',
-      cell: renderOper,
-      width: 180,
-    },
+    // {
+    //   title: '操作',
+    //   dataIndex: 'oper',
+    //   cell: renderOper,
+    //   width: 180,
+    // },
   ];
   const config = [
     {
@@ -134,72 +154,72 @@ export default function LibTable() {
         placeholder: '请输入',
       },
       formBinderProps: {
-        name: 'bookName',
+        name: 'name',
         triggerType: 'onBlur',
       },
     },
-    {
-      label: '作者名称',
-      component: 'Input',
-      componnetProps: {
-        placeholder: '请输入',
-      },
-      formBinderProps: {
-        name: 'authorName',
-        triggerType: 'onBlur',
-      },
-    },
-    {
-      label: 'ISBN 号',
-      component: 'Input',
-      componnetProps: {
-        placeholder: '请输入',
-      },
-      formBinderProps: {
-        name: 'isbn',
-        triggerType: 'onBlur',
-      },
-    },
-    {
-      label: '图书分类',
-      component: 'Input',
-      componnetProps: {
-        placeholder: '请选择',
-        options: [
-          {
-            lable: '技术领域',
-            value: 'technology',
-          },
-          {
-            lable: '专业领域',
-            value: 'professional',
-          },
-          {
-            lable: '管理沟通',
-            value: 'management',
-          },
-          {
-            lable: '其他',
-            value: 'other',
-          },
-        ],
-      },
-      formBinderProps: {
-        name: 'cate',
-        triggerType: 'onBlur',
-      },
-    },
-    {
-      label: '出版社',
-      component: 'Input',
-      componnetProps: {
-        placeholder: '请输入',
-      },
-      formBinderProps: {
-        name: 'publisher',
-        triggerType: 'onBlur',
-      },
-    },
+    // {
+    //   label: '作者名称',
+    //   component: 'Input',
+    //   componnetProps: {
+    //     placeholder: '请输入',
+    //   },
+    //   formBinderProps: {
+    //     name: 'authorName',
+    //     triggerType: 'onBlur',
+    //   },
+    // },
+    // {
+    //   label: 'ISBN 号',
+    //   component: 'Input',
+    //   componnetProps: {
+    //     placeholder: '请输入',
+    //   },
+    //   formBinderProps: {
+    //     name: 'isbn',
+    //     triggerType: 'onBlur',
+    //   },
+    // },
+    // {
+    //   label: '图书分类',
+    //   component: 'Input',
+    //   componnetProps: {
+    //     placeholder: '请选择',
+    //     options: [
+    //       {
+    //         lable: '技术领域',
+    //         value: 'technology',
+    //       },
+    //       {
+    //         lable: '专业领域',
+    //         value: 'professional',
+    //       },
+    //       {
+    //         lable: '管理沟通',
+    //         value: 'management',
+    //       },
+    //       {
+    //         lable: '其他',
+    //         value: 'other',
+    //       },
+    //     ],
+    //   },
+    //   formBinderProps: {
+    //     name: 'cate',
+    //     triggerType: 'onBlur',
+    //   },
+    // },
+    // {
+    //   label: '出版社',
+    //   component: 'Input',
+    //   componnetProps: {
+    //     placeholder: '请输入',
+    //   },
+    //   formBinderProps: {
+    //     name: 'publisher',
+    //     triggerType: 'onBlur',
+    //   },
+    // },
   ];
 
   return (

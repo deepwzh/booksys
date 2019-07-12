@@ -31,15 +31,31 @@ export default function DonationForm() {
       if (errors) {
         console.log({ errors });
       } else {
+        fetch('/api/addbook', {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            "name": values.name,
+            "date": values.date.valueOf(),
+            "type": values.type,
+            "isbn": values.isbn,
+            "pub": values.pub,
+            
+          }),
+        }).then(res => res.json)
+        .then(res => {
+          Message.success('添加成功');
+        })
         console.log({ values });
-        Message.success('提交成功');
       }
     });
   };
 
   return (
     <IceContainer>
-      <div className={styles.title}>图书捐赠</div>
+      <div className={styles.title}>图书添加</div>
       <IceFormBinderWrapper
         value={value}
         onChange={formChange}
@@ -52,7 +68,7 @@ export default function DonationForm() {
               required
               triggerType="onBlur"
               message="图书名称不能为空"
-              name="bookName"
+              name="name"
             >
               <Input
                 placeholder="请输入图书名称"
@@ -60,7 +76,7 @@ export default function DonationForm() {
               />
             </IceFormBinder>
             <div className={styles.formError}>
-              <IceFormError name="bookName" />
+              <IceFormError name="name" />
             </div>
           </div>
           <div className={styles.formItem}>
@@ -82,20 +98,34 @@ export default function DonationForm() {
           </div>
           <div className={styles.formItem}>
             <div className={styles.formLabel}>书目类别</div>
-            <IceFormBinder name="cate">
+            <IceFormBinder name="pub">
               <Select
                 placeholder="请选择"
-                mode="multiple"
+                // mode="multiple"
                 className={styles.selectWidth}
               >
-                <Option value="technology">技术领域</Option>
-                <Option value="professional">专业领域</Option>
-                <Option value="management">管理沟通</Option>
-                <Option value="other">其他</Option>
+                <Option value="1">机械工业出版社</Option>
+                <Option value="2">高等教育出版社</Option>
+                <Option value="3">千锋出版社</Option>
               </Select>
             </IceFormBinder>
           </div>
           <div className={styles.formItem}>
+            <div className={styles.formLabel}>书目类别</div>
+            <IceFormBinder name="type">
+              <Select
+                placeholder="请选择"
+                // mode="multiple"
+                className={styles.selectWidth}
+              >
+                <Option value="0">技术领域</Option>
+                <Option value="1">专业领域</Option>
+                <Option value="2">管理沟通</Option>
+                <Option value="3">其他</Option>
+              </Select>
+            </IceFormBinder>
+          </div>
+          {/* <div className={styles.formItem}>
             <div className={styles.formLabel}>捐赠人</div>
             <IceFormBinder
               required
@@ -111,16 +141,16 @@ export default function DonationForm() {
             <div className={styles.formError}>
               <IceFormError name="donator" />
             </div>
-          </div>
+          </div> */}
           <div className={styles.formItem}>
-            <div className={styles.formLabel}>捐赠时间</div>
-            <IceFormBinder name="time">
+            <div className={styles.formLabel}>添加时间</div>
+            <IceFormBinder name="date">
               <DatePicker
                 className={styles.selectWidth}
               />
             </IceFormBinder>
           </div>
-          <div className={styles.formItem}>
+          {/* <div className={styles.formItem}>
             <div className={styles.formLabel}>状态</div>
             <IceFormBinder name="status">
               <RadioGroup
@@ -145,10 +175,10 @@ export default function DonationForm() {
                 ]}
               />
             </IceFormBinder>
-          </div>
-          <p className={styles.tips}>
+          </div> */}
+          {/* <p className={styles.tips}>
             提醒：若选择“在库”状态的话，请确认已经将图书放置到1-5-10-N的书架上
-          </p>
+          </p> */}
           <Button
             type="primary"
             className={styles.submitButton}

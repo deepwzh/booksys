@@ -36,7 +36,7 @@ const UserRegister = (props) => {
   const checkPasswd2 = (rule, values, callback, stateValues) => {
     if (!values) {
       callback('请输入正确的密码');
-    } else if (values && values !== stateValues.passwd) {
+    } else if (values && values !== stateValues.password) {
       callback('两次输入密码不一致');
     } else {
       callback();
@@ -51,9 +51,22 @@ const UserRegister = (props) => {
         console.log('errors', errors);
         return;
       }
-      console.log(values);
-      Message.success('注册成功');
-      props.history.push('/user/login');
+      fetch('/api/register', {
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",
+        },
+        "body": JSON.stringify({username: values.username, password: values.password, email: values.email }),
+      }).then(res => res.json())
+      .then(res => {
+        Message.success(res.result);
+        console.log(values);
+
+        if (res.code === 0) {
+          props.history.push('/user/login');
+
+        }
+      })
     });
   };
 
@@ -71,7 +84,7 @@ const UserRegister = (props) => {
               <Col className={styles.formItemCol}>
                 <IceIcon type="person" size="small" className={styles.inputIcon} />
                 <IceFormBinder
-                  name="name"
+                  name="username"
                   required
                   message="请输入正确的用户名"
                 >
@@ -104,7 +117,7 @@ const UserRegister = (props) => {
               <Col className={styles.formItemCol}>
                 <IceIcon type="lock" size="small" className={styles.inputIcon} />
                 <IceFormBinder
-                  name="passwd"
+                  name="password"
                   required
                   validator={checkPasswd}
                 >
@@ -116,7 +129,7 @@ const UserRegister = (props) => {
                 </IceFormBinder>
               </Col>
               <Col>
-                <IceFormError name="passwd" />
+                <IceFormError name="password" />
               </Col>
             </Row>
 
@@ -124,7 +137,7 @@ const UserRegister = (props) => {
               <Col className={styles.formItemCol}>
                 <IceIcon type="lock" size="small" className={styles.inputIcon} />
                 <IceFormBinder
-                  name="rePasswd"
+                  name="password1"
                   required
                   validator={(rule, values, callback) => checkPasswd2(
                     rule,
@@ -142,7 +155,7 @@ const UserRegister = (props) => {
                 </IceFormBinder>
               </Col>
               <Col>
-                <IceFormError name="rePasswd" />
+                <IceFormError name="repassword1" />
               </Col>
             </Row>
 
