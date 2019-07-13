@@ -64,7 +64,7 @@ public class UserController {
         if (is_vaild) {
             return new UserResult(0, "登录成功", userService.getUserByUsername(user.getUsername()));
         } else {
-            return new UserResult(0, "登录失败", null);
+            return new UserResult(1, "登录失败", null);
         }
     }
 

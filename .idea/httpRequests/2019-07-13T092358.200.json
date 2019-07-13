@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "isbn": "00001",
+    "name": "软件工程导论",
+    "date": "2019-07-10",
+    "num": 11,
+    "type": {
+      "id": 0,
+      "name": "技术领域\r "
+    },
+    "author": "张老师",
+    "pub": {
+      "id": 0,
+      "name": "机械工业出版社"
+    },
+    "exist_num": 10,
+    "price": 12.5
+  },
+  {
+    "id": 2,
+    "isbn": "4545454545",
+    "name": "Hello World",
+    "date": "1970-01-10",
+    "num": 1,
+    "type": {
+      "id": 0,
+      "name": "技术领域\r "
+    },
+    "author": "张老师",
+    "pub": {
+      "id": 0,
+      "name": "机械工业出版社"
+    },
+    "exist_num": 1,
+    "price": 1.0
+  },
+  {
+    "id": 3,
+    "isbn": "4545454545",
+    "name": "Hello World",
+    "date": "1970-01-10",
+    "num": 1,
+    "type": {
+      "id": 0,
+      "name": "技术领域\r "
+    },
+    "author": "张老师",
+    "pub": {
+      "id": 0,
+      "name": "机械工业出版社"
+    },
+    "exist_num": 1,
+    "price": 1.0
+  },
+  {
+    "id": 4,
+    "isbn": "235325",
+    "name": "水电费水电费",
+    "date": "2019-07-03",
+    "num": 1,
+    "type": {
+      "id": 0,
+      "name": "技术领域\r "
+    },
+    "author": "张老师",
+    "pub": {
+      "id": 0,
+      "name": "机械工业出版社"
+    },
+    "exist_num": 1,
+    "price": 1.0
+  },
+  {
+    "id": 9,
+    "isbn": "45878687567",
+    "name": "计算机科学与技术",
+    "date": "2019-07-13",
+    "num": 0,
+    "type": {
+      "id": 0,
+      "name": "技术领域\r "
+    },
+    "author": null,
+    "pub": {
+      "id": 0,
+      "name": "机械工业出版社"
+    },
+    "exist_num": 0,
+    "price": 0.0
+  },
+  {
+    "id": 10,
+    "isbn": "123213213",
+    "name": "ASJSFJLKDS",
+    "date": "2019-07-16",
+    "num": 0,
+    "type": {
+      "id": 0,
+      "name": "技术领域\r "
+    },
+    "author": null,
+    "pub": {
+      "id": 0,
+      "name": "机械工业出版社"
+    },
+    "exist_num": 0,
+    "price": 0.0
+  },
+  {
+    "id": 7,
+    "isbn": "4545454545",
+    "name": "Hello World",
+    "date": "1970-01-10",
+    "num": 0,
+    "type": {
+      "id": 0,
+      "name": "技术领域\r "
+    },
+    "author": null,
+    "pub": {
+      "id": 0,
+      "name": "高等教育出版社"
+    },
+    "exist_num": 0,
+    "price": 0.0
+  },
+  {
+    "id": 8,
+    "isbn": "325345435",
+    "name": "高等数学十八讲",
+    "date": "2019-07-29",
+    "num": 0,
+    "type": {
+      "id": 0,
+      "name": "技术领域\r "
+    },
+    "author": null,
+    "pub": {
+      "id": 0,
+      "name": "高等教育出版社"
+    },
+    "exist_num": 0,
+    "price": 0.0
+  },
+  {
+    "id": 5,
+    "isbn": "13412424",
+    "name": "放入胜多负少",
+    "date": "2019-07-25",
+    "num": 1,
+    "type": {
+      "id": 0,
+      "name": "管理领域"
+    },
+    "author": "张老师",
+    "pub": {
+      "id": 0,
+      "name": "机械工业出版社"
+    },
+    "exist_num": 1,
+    "price": 1.0
+  }
+]
