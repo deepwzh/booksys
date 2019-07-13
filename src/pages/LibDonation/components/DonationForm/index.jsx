@@ -97,7 +97,7 @@ export default function DonationForm() {
             </div>
           </div>
           <div className={styles.formItem}>
-            <div className={styles.formLabel}>书目类别</div>
+            <div className={styles.formLabel}>出版社</div>
             <IceFormBinder name="pub">
               <Select
                 placeholder="请选择"

@@ -44,6 +44,8 @@ const UserLogin = (props) => {
           window.localStorage.setItem("userid", res.user.id);
           // window.localStorage.setItem("userid", values.username);
           props.history.push('/');
+        } else {
+          Message.success('登录失败，检查用户名或密码是否正确');
         }
       })
       console.log(values);
@@ -99,12 +101,12 @@ const UserLogin = (props) => {
             >
               登 录
             </Button>
-            <p className="account">
+            {/* <p className="account">
               <span className={styles.tipsText} style={{ marginRight: '20px' }}>
                 管理员登录：admin/admin
               </span>
               <span className={styles.tipsText}>用户登录：user/user</span>
-            </p>
+            </p> */}
           </Row>
 
           <Row className={styles.tips}>

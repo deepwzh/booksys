@@ -35,7 +35,7 @@ const asideMenuConfig = [{
     //   icon: 'person',
     // },
     {
-        name: '图书捐赠',
+        name: '图书添加',
         path: '/donation',
         icon: 'directory',
     },
